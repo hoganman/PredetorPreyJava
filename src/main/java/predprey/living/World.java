@@ -70,7 +70,7 @@ public class World {
     }
 
     // The cells of the grid inhabit one living entity
-    public AbstractLiving[][] cells;
+    AbstractLiving[][] cells;
     // The 1D edge size of the grid, set in constructor
     private final int size;
 }
