@@ -39,6 +39,11 @@ public class World {
         cells[size / 2][size / 2] = new Grass(size / 2, size / 2);
     }
 
+    /**
+     * Represent the world grid as a string using ASCII characters
+     *
+     * @return A rectangular grid
+     */
     public String toString() {
         String out = "";
         for (int row = -1; row <= size; ++row) {
