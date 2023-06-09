@@ -47,7 +47,7 @@ class Rabbit extends AbstractLiving {
     @Override
     Count getCount() { return neighborCount; }
 
-    private int age;
+    private final int age;
     static Count neighborCount = new Count();
     private final int LIFE_EXPECTENCY = 3;
 }

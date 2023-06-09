@@ -48,6 +48,6 @@ class Fox extends AbstractLiving {
     Count getCount() { return neighborCount; }
 
     static Count neighborCount = new Count();
-    private int age;
+    private final int age;
     private final int LIFE_EXPECTENCY = 5;
 }
