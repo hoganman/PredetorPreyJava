@@ -6,6 +6,11 @@ package predprey.living;
  */
 public class World {
 
+    /**
+     * Construct a 2D world of size-by-size
+     *
+     * @param size The edge-size of square grid
+     */
     public World(int size) {
         this.size = size;
         cells = new AbstractLiving[this.size][this.size];
@@ -14,6 +19,9 @@ public class World {
                 cells[row][col] = new Empty(row, col);
     }
 
+    /**
+     * Clear all entity counters for the current cycle.
+     */
     public void clearNeighborCounts() {
         Fox.neighborCount.set(0);
         Rabbit.neighborCount.set(0);
@@ -21,6 +29,9 @@ public class World {
         Empty.neighborCount.set(0);
     }
 
+    /**
+     * Initialize the world into "Eden"
+     */
     public void eden() {
 //        for (int row = -1; row <= size; ++row) {
 //            for (int col = 0; col < size; ++col) {
@@ -47,7 +58,8 @@ public class World {
         return out;
     }
 
-    /** Update the world into the next year iteration
+    /**
+     * Update the world into the next cycle iteration
      *
      * @param oldWorld Previous iteration of the world
      */
