@@ -71,11 +71,33 @@ public class World {
     public void update(World oldWorld){
         for (int row = 1; row < size - 1; ++row)
             for (int col = 1; col < size - 1; ++col)
-                cells[row][col] = oldWorld.cells[row][col].next(oldWorld);
+                setCell(row, col, oldWorld.getCell(row, col).next(oldWorld));
+    }
+
+    /**
+     * Get the cell in the world
+     *
+     * @param row Row index
+     * @param col Column index
+     * @return Living cell
+     */
+    public AbstractLiving getCell(int row, int col) {
+        return cells[row][col];
+    }
+
+    /**
+     * Set the cell in the world
+     *
+     * @param row Row index
+     * @param col Column index
+     * @param other New cell
+     */
+    public void setCell(int row, int col, AbstractLiving other) {
+        cells[row][col] = other;
     }
 
     // The cells of the grid inhabit one living entity
-    AbstractLiving[][] cells;
+    private AbstractLiving[][] cells;
     // The 1D edge size of the grid, set in constructor
     private final int size;
 }

@@ -28,10 +28,10 @@ public abstract class AbstractLiving {
      */
     void computeNeighbors(World world) {
         world.clearNeighborCounts();
-        world.cells[row][column].getCount().set(-1);
+        world.getCell(row, column).getCount().set(-1);
         for (int row_index = -1; row_index <= 1; ++row_index)
             for (int col_index = -1; col_index <= 1; ++col_index)
-                world.cells[row + row_index][column + col_index].getCount().inc();
+                world.getCell(row + row_index, column + col_index).getCount().inc();
     }
 
     int row;
