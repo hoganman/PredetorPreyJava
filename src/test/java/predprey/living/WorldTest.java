@@ -14,4 +14,14 @@ class WorldTest {
                 assertTrue(test1.getCell(row, col) instanceof Empty);
 
     }
+
+    @Test
+    void testClearNeighborsResetsAllCounters() {
+        World test1 = new World(1);
+        test1.clearNeighborCounts();
+        assertEquals(0, Fox.neighborCount.get());
+        assertEquals(0, Rabbit.neighborCount.get());
+        assertEquals(0, Grass.neighborCount.get());
+        assertEquals(0, Empty.neighborCount.get());
+    }
 }
