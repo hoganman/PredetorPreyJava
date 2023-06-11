@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WorldTest {
 
     @Test
-    void next() {
+    void testNewWorldHasAllEmptyCells() {
         World test1 = new World(3);
         for (int row = 0; row < 3; ++row)
             for (int col = 0; col < 3; ++col)
